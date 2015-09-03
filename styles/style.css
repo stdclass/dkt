@@ -1,39 +1,15 @@
+body{
+    overflow: hidden;
+}
+
 #board{
-    position: absolute;
-    left: 350px;
-    top: 0;
+    margin: 0 auto;
     border: 3px solid #000;
     font-size: 7px;
     text-transform: uppercase;
     font-weight: bold;
     background: rgba(0,0,0,.4);
     transition: all 1s ease-in-out;
-
-    -webkit-transform:  perspective(1000px) rotateX( 53deg );
-       -moz-transform:  perspective(1000px) rotateX( 53deg );
-         -o-transform:  perspective(1000px) rotateX( 53deg );
-            transform:  perspective(1000px) rotateX( 53deg );
-}
-
-#board.tilt-90{
-    -webkit-transform:  perspective(1000px) rotateX( 53deg ) rotateZ(90deg);
-       -moz-transform:  perspective(1000px) rotateX( 53deg ) rotateZ(90deg);
-         -o-transform:  perspective(1000px) rotateX( 53deg ) rotateZ(90deg);
-            transform:  perspective(1000px) rotateX( 53deg ) rotateZ(90deg);
-}
-
-#board.tilt-180{
-    -webkit-transform:  perspective(1000px) rotateX( 53deg ) rotateZ(180deg);
-       -moz-transform:  perspective(1000px) rotateX( 53deg ) rotateZ(180deg);
-         -o-transform:  perspective(1000px) rotateX( 53deg ) rotateZ(180deg);
-            transform:  perspective(1000px) rotateX( 53deg ) rotateZ(180deg);
-}
-
-#board.tilt-270{
-    -webkit-transform:  perspective(1000px) rotateX( 53deg ) rotateZ(270deg);
-       -moz-transform:  perspective(1000px) rotateX( 53deg ) rotateZ(270deg);
-         -o-transform:  perspective(1000px) rotateX( 53deg ) rotateZ(270deg);
-            transform:  perspective(1000px) rotateX( 53deg ) rotateZ(270deg);
 }
 
 
@@ -89,7 +65,7 @@
 #board > .tile-container > .tile::before{
     position: absolute;
     top: 3%;
-    left: 3%;
+    right: 3%;
     content: attr(data-tile);
 }
 
@@ -115,18 +91,41 @@
 
 
 #board > .tile-container > .tile-risk,
-#board > .tile-container > .tile-bank{
+#board > .tile-container > .tile-bank,
+#board > .tile-container > .tile-taxes{
     background: #fff;
 }
 
+#board > .tile-container > .tile-start{
+    background: red;
+}
+
 #board > .tile-container > .tile-risk > .title,
-#board > .tile-container > .tile-bank > .title{
+#board > .tile-container > .tile-bank > .title,
+#board > .tile-container > .tile-taxes > .title{
     position: absolute;
     left: 0;
     right: 0;
     top: 25%;
     text-align: center;
     padding: 5px;
+}
+
+
+#board > .tile-container > .tile-start > .title{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 48%;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+
+#board > .tile-container > .tile-taxes > .title > div{
+    color: rgba(255,0,0,.7);
+    font-size: 20px;
 }
 
 #board > .tile-container > .tile-risk > .title::before,
@@ -170,4 +169,11 @@
 }
 #board > .tile-container > .tile-orange > .title{
     background: orange;
+}
+#board > .tile-container > .tile-lightblue > .title{
+    background: lightblue;
+}
+#board > .tile-container > .tile-blue > .title{
+    background: blue;
+    color: #fff;
 }

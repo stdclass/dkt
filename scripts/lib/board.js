@@ -6,9 +6,18 @@ define(["fiber", "jquery"], function(fiber){
     var Board = fiber.extend(function(){
         return {
             data: {},
-            boardRotation: 0,
+            transformation: {
+                rotateZ: 0,
+                rotateX: 0,
+                scale: 1
+            },
+            defaultTilt: 48,
             $board: null,
+            
+            
             init: function(){
+                
+                this.transformation.rotateX = this.defaultTilt;
                 
                 $.ajax("/dkt/scripts/data/board.json").always($.proxy(function(data){
                     this.data = data;
@@ -17,11 +26,13 @@ define(["fiber", "jquery"], function(fiber){
                 this.$board = $("#board");
                 
                 this.adaptSize();
+                
+                this.transform();
             },
             
             adaptSize: function(){
                 
-                var size = $(window).height() - 200 ;
+                var size = $(window).height() - 50;
                 
                 this.$board.css({
                     width: size,
@@ -30,31 +41,46 @@ define(["fiber", "jquery"], function(fiber){
             },
             
             turnLeft: function(){
-                this.boardRotation += 90;
-                
-                if( this.boardRotation >= 360 ){
-                    this.boardRotation = 0;
-                }
-                
-                this.turn();
+                this.transformation.rotateZ += 90;                
+                this.transform();
             },
             
             turnRight: function(){
-                this.boardRotation -= 90;
-                
-                if( this.boardRotation < 0 ){
-                    this.boardRotation = 270;
-                }
-                
-                this.turn();
+                this.transformation.rotateZ -= 90;                
+                this.transform();
             },
             
-            turn: function(deg){
-                var className;
-                
-                className = "tilt-" + this.boardRotation;
-                
-                this.$board.attr("class", className)
+            disable3d: function(){
+                this.transformation.rotateX = 0;
+                this.transform();
+            },
+            
+            enable3d: function(){
+                this.transformation.rotateX = this.defaultTilt;
+                this.transform();
+            },
+            
+            zoomIn: function(){
+                this.transformation.scale += 0.2;
+                this.transform();
+            },
+            
+            zoomOut: function(){
+                this.transformation.scale -= 0.2;
+                this.transform();
+            },
+            
+            zoomDefault: function(){
+                this.transformation.scale = 1;
+                this.transform();
+            },
+            
+            transform: function(){
+                this.$board.css("transform", "scale( " + this.transformation.scale + " ) perspective(1000px) rotateX( " + this.transformation.rotateX + "deg ) rotateZ( " + this.transformation.rotateZ + "deg )")
+            },
+            
+            resize: function(){
+                this.adaptSize();
             },
             
             render: function(){

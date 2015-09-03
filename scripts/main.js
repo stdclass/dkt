@@ -25,10 +25,20 @@ require(
     
     $(window).keyup(function(ev){
         // 37 left, 39 right
+        console.log(ev.keyCode);
         
         switch(ev.keyCode){
             case 37: Board.turnRight(); break;
+            case 38: Board.disable3d(); break;
             case 39: Board.turnLeft(); break;
+            case 40: Board.enable3d(); break;
+            case 48: Board.zoomDefault(); break;
+            case 187: Board.zoomIn(); break;
+            case 189: Board.zoomOut(); break;
         }
     });
+    
+    $(window).resize(function(){
+        Board.resize();
+    })
 });

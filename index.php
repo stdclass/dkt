@@ -69,116 +69,118 @@
             </div>
 
             <div class="tile-container tile-container-right">
-                <div class="tile tile-corner tile-risk" data-tile="21">
+                <div class="tile tile-corner tile-risk" data-tile="31">
+                    <div class="title">
+                        Gef&auml;ngniss
+                    </div>
+                </div>
+                <div class="tile tile-building tile-orange" data-tile="32">
+                    <div class="title">
+                        Alterplatz
+                    </div>
+                </div>
+                <div class="tile tile-taxes" data-tile="33">
+                    <div class="title">
+                        Erwerbssteuer
+                        <div>80,-</div>
+                    </div>
+                </div>
+                <div class="tile tile-transport" data-tile="34">
+                    <div class="title">
+                        <div>Fluglinie</div>
+                        Wien-Venedig
+                    </div>
+                </div>
+                <div class="tile tile-building tile-lightblue" data-tile="35">
+                    <div class="title">
+                        Maria<br />
+                        Theresien-<br />
+                        Strasse
+                    </div>
+                </div>
+                <div class="tile tile-building tile-lightblue" data-tile="36">
+                    <div class="title">
+                        Andreas-<br />
+                        Hofer-Str.
+                    </div>
+                </div>
+                <div class="tile tile-building tile-lightblue" data-tile="37">
+                    <div class="title">
+                        Bozner-<br />
+                        Platz
+                    </div>
+                </div>
+                <div class="tile tile-risk" data-tile="38">
                     <div class="title">
                         Risiko
                     </div>
                 </div>
-                <div class="tile tile-building tile-green" data-tile="22">
+                <div class="tile tile-building tile-blue" data-tile="39">
                     <div class="title">
-                        Museums-<br />
+                        Arlberg-<br />
                         Strasse
                     </div>
                 </div>
-                <div class="tile tile-risk" data-tile="23">
+                <div class="tile tile-building tile-blue" data-tile="40">
                     <div class="title">
-                        Risiko
-                    </div>
-                </div>
-                <div class="tile tile-transport" data-tile="24">
-                    <div class="title">
-                        Glockner-<br />
-                        strasse
-                    </div>
-                </div>
-                <div class="tile tile-building tile-yellow" data-tile="25">
-                    <div class="title">
-                        Mirabell-<br />
-                        Platz
-                    </div>
-                </div>
-                <div class="tile tile-building tile-yellow" data-tile="26">
-                    <div class="title">
-                        Westbahn-<br />
-                        Strasse
-                    </div>
-                </div>
-                <div class="tile tile-building tile-yellow" data-tile="27">
-                    <div class="title">
-                        Universitäts-<br />
-                        Platz
-                    </div>
-                </div>
-                <div class="tile tile-bank" data-tile="28">
-                    <div class="title">
-                        Bank
-                    </div>
-                </div>
-                <div class="tile tile-building tile-orange" data-tile="29">
-                    <div class="title">
-                        Burggasse
-                    </div>
-                </div>
-                <div class="tile tile-building tile-orange" data-tile="30">
-                    <div class="title">
-                        Villacher-<br />
+                        Rathaus-<br />
                         Strasse
                     </div>
                 </div>
             </div>
 
             <div class="tile-container tile-container-bottom">
-                <div class="tile tile-corner tile-risk" data-tile="21">
+                <div class="tile tile-corner tile-start" data-tile="1">
                     <div class="title">
-                        Risiko
+                        Start
                     </div>
                 </div>
-                <div class="tile tile-building tile-green" data-tile="22">
+                <div class="tile tile-building tile-green" data-tile="2">
                     <div class="title">
                         Museums-<br />
                         Strasse
                     </div>
                 </div>
-                <div class="tile tile-risk" data-tile="23">
+                <div class="tile tile-risk" data-tile="3">
                     <div class="title">
                         Risiko
                     </div>
                 </div>
-                <div class="tile tile-transport" data-tile="24">
+                <div class="tile tile-transport" data-tile="4">
                     <div class="title">
                         Glockner-<br />
                         strasse
                     </div>
                 </div>
-                <div class="tile tile-building tile-yellow" data-tile="25">
+                <div class="tile tile-building tile-yellow" data-tile="5">
                     <div class="title">
                         Mirabell-<br />
                         Platz
                     </div>
                 </div>
-                <div class="tile tile-building tile-yellow" data-tile="26">
+                <div class="tile tile-building tile-yellow" data-tile="6">
                     <div class="title">
                         Westbahn-<br />
                         Strasse
                     </div>
                 </div>
-                <div class="tile tile-building tile-yellow" data-tile="27">
+                <div class="tile tile-building tile-yellow" data-tile="7">
                     <div class="title">
                         Universitäts-<br />
                         Platz
                     </div>
                 </div>
-                <div class="tile tile-bank" data-tile="28">
+                <div class="tile tile-bank" data-tile="8">
                     <div class="title">
                         Bank
                     </div>
                 </div>
-                <div class="tile tile-building tile-orange" data-tile="29">
+                <div class="tile tile-building tile-orange" data-tile="9">
                     <div class="title">
                         Burggasse
                     </div>
                 </div>
-                <div class="tile tile-building tile-orange" data-tile="30">
+                <div class="tile tile-building tile-orange" data-tile="10">
                     <div class="title">
                         Villacher-<br />
                         Strasse
@@ -187,64 +189,63 @@
             </div>
 
             <div class="tile-container tile-container-left">
-                <div class="tile tile-corner tile-risk" data-tile="21">
+                <div class="tile tile-corner tile-risk" data-tile="11">
                     <div class="title">
                         Risiko
                     </div>
                 </div>
-                <div class="tile tile-building tile-green" data-tile="22">
+                <div class="tile tile-building tile-green" data-tile="12">
                     <div class="title">
                         Museums-<br />
                         Strasse
                     </div>
                 </div>
-                <div class="tile tile-risk" data-tile="23">
+                <div class="tile tile-risk" data-tile="13">
                     <div class="title">
                         Risiko
                     </div>
                 </div>
-                <div class="tile tile-transport" data-tile="24">
+                <div class="tile tile-transport" data-tile="14">
                     <div class="title">
                         Glockner-<br />
                         strasse
                     </div>
                 </div>
-                <div class="tile tile-building tile-yellow" data-tile="25">
+                <div class="tile tile-building tile-yellow" data-tile="15">
                     <div class="title">
                         Mirabell-<br />
                         Platz
                     </div>
                 </div>
-                <div class="tile tile-building tile-yellow" data-tile="26">
+                <div class="tile tile-building tile-yellow" data-tile="16">
                     <div class="title">
                         Westbahn-<br />
                         Strasse
                     </div>
                 </div>
-                <div class="tile tile-building tile-yellow" data-tile="27">
+                <div class="tile tile-building tile-yellow" data-tile="17">
                     <div class="title">
                         Universitäts-<br />
                         Platz
                     </div>
                 </div>
-                <div class="tile tile-bank" data-tile="28">
+                <div class="tile tile-bank" data-tile="18">
                     <div class="title">
                         Bank
                     </div>
                 </div>
-                <div class="tile tile-building tile-orange" data-tile="29">
+                <div class="tile tile-building tile-orange" data-tile="19">
                     <div class="title">
                         Burggasse
                     </div>
                 </div>
-                <div class="tile tile-building tile-orange" data-tile="30">
+                <div class="tile tile-building tile-orange" data-tile="20">
                     <div class="title">
                         Villacher-<br />
                         Strasse
                     </div>
                 </div>
             </div>
-            
             
             
         </div>
