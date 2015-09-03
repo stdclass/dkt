@@ -1,0 +1,227 @@
+{
+    "fields": [
+        {
+            "type": "start",
+            "name": "Start"
+        },
+        {
+            "type": "building",
+            "name": "Amtsplatz",
+            "city": 0
+        },
+        {
+            "type": "risk",
+            "name": "Risiko"
+        },
+        {
+            "type": "company",
+            "name": "Kraftwerk"
+        },
+        {
+            "type": "building",
+            "name": "Murplatz",
+            "city": 1
+        },
+        {
+            "type": "building",
+            "name": "Annenstrasse",
+            "city": 1
+        },
+        {
+            "type": "building",
+            "name": "Joaneumring",
+            "city": 1
+        },
+        {
+            "type": "transport",
+            "name": "Eisenbahn",
+            "description": "Wien - Graz"
+        },
+        {
+            "type": "bank",
+            "name": "Bank"
+        },
+        {
+            "type": "building",
+            "name": "Jos. Haydn-Gasse",
+            "city": 2
+        },
+        {
+            "type": "jail",
+            "name": "Gesetzesverletzung"
+        },
+        {
+            "type": "building",
+            "name": "Schlossgrund",
+            "city": 2
+        },
+        {
+            "type": "transport",
+            "name": "Boot",
+            "description": "Wien - Budapest"
+        },
+        {
+            "type": "company",
+            "name": "Sender"
+        },
+        {
+            "type": "building",
+            "name": "Kärtnerstrasse",
+            "city": 3
+        },
+        {
+            "type": "building",
+            "name": "Mariahilferstrasse",
+            "city": 3
+        },
+        {
+            "type": "building",
+            "name": "Viriotgasse",
+            "city": 3
+        },
+        {
+            "type": "transport",
+            "name": "Bahn",
+            "description": "Wien - Innsbruck"
+        },
+        {
+            "type": "building",
+            "name": "Landstrasse",
+            "city": 4
+        },
+        {
+            "type": "building",
+            "name": "Stifterstrasse",
+            "city": 4
+        },
+        {
+            "type": "risk",
+            "name": "Risiko"
+        },
+        {
+            "type": "building",
+            "name": "Museumstrasse",
+            "city": 4
+        },
+        {
+            "type": "risk",
+            "name": "Risiko"
+        },
+        {
+            "type": "transport",
+            "name": "Autobus",
+            "description": "Glocknerstrasse"
+        },
+        {
+            "type": "building",
+            "name": "Mirabellplatz",
+            "city": 5
+        },
+        {
+            "type": "building",
+            "name": "Westbahnstrasse",
+            "city": 5
+        },
+        {
+            "type": "building",
+            "name": "Thaliastrasse",
+            "city": 5
+        },
+        {
+            "type": "bank",
+            "name": "Bank"
+        },
+        {
+            "type": "building",
+            "name": "Burggasse",
+            "city": 6
+        },
+        {
+            "type": "building",
+            "name": "Villacherstrasse",
+            "city": 6
+        },
+        {
+            "type": "jail",
+            "name": "Gefängnis"
+        },
+        {
+            "type": "building",
+            "name": "Faschinggasse",
+            "city": 6
+        },
+        {
+            "type": "risk",
+            "name": "Risiko"
+        },
+        {
+            "type": "transport",
+            "name": "Flugzeug",
+            "description": "Wien - Venedig"
+        },
+        {
+            "type": "building",
+            "name": "Mariatheresienstrasse",
+            "city": 7
+        },
+        {
+            "type": "building",
+            "name": "Museumsstrasse",
+            "city": 7
+        },
+        {
+            "type": "building",
+            "name": "Boznerplatz",
+            "city": 7
+        },
+        {
+            "type": "risk",
+            "name": "Risiko"
+        },
+        {
+            "type": "building",
+            "name": "Garberstrasse",
+            "city": 0
+        },
+        {
+            "type": "building",
+            "name": "Rathausstrasse",
+            "city": 0
+        }
+        
+    ],
+    "cities": [
+        {
+            "name": "Bregenz",
+            "color": "brown"
+        },
+        {
+            "name": "Graz",
+            "color": "orange"
+        },
+        {
+            "name": "Eisenstadt",
+            "color": "rosa"
+        },
+        {
+            "name": "Wien",
+            "color": "red"
+        },
+        {
+            "name": "Linz",
+            "color": "green"
+        },
+        {
+            "name": "Salzburg",
+            "color": "yellow"
+        },
+        {
+            "name": "Klagenfurt",
+            "color": "darkblue"
+        },
+        {
+            "name": "Innsbruck",
+            "color": "lightblue"
+        }
+    ]
+}
