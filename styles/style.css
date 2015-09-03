@@ -8,7 +8,7 @@ body{
     font-size: 7px;
     text-transform: uppercase;
     font-weight: bold;
-    background: rgba(0,0,0,.4);
+    background: rgba(0,0,0,.1);
     transition: all 1s ease-in-out;
 }
 
@@ -162,18 +162,30 @@ body{
 
 
 #board > .tile-container > .tile-green > .title{
-    background: lightgreen;
+    background: #B5D672;
 }
 #board > .tile-container > .tile-yellow > .title{
-    background: yellow;
+    background: #EDC951;
 }
 #board > .tile-container > .tile-orange > .title{
-    background: orange;
+    background: #EB6841;
 }
 #board > .tile-container > .tile-lightblue > .title{
-    background: lightblue;
+    background: #A5EBF2;
+}
+#board > .tile-container > .tile-brown > .title{
+    background: #6A4A3C;
+    color: #fff;
+}
+#board > .tile-container > .tile-rosa > .title{
+    background: #E86FE8;
+    color: #fff;
+}
+#board > .tile-container > .tile-red > .title{
+    background: #CC333F;
+    color: #fff;
 }
 #board > .tile-container > .tile-blue > .title{
-    background: blue;
+    background: #00A0B0;
     color: #fff;
 }
