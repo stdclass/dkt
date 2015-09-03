@@ -1,4 +1,4 @@
-define(["fiber", "jquery", "fieldFactory"], function(fiber, $, FieldFactory){
+define(["fiber", "jquery", "fieldFactory", "player"], function(fiber, $, FieldFactory, Player){
     
     var fiber = require("fiber");
     
@@ -10,8 +10,10 @@ define(["fiber", "jquery", "fieldFactory"], function(fiber, $, FieldFactory){
                 scale: 1
             },
             defaultTilt: 48,
+            maxField: 40,
             $board: null,
-            fields: {},            
+            fields: {},
+            players: {},
             init: function(){
                 
                 this.transformation.rotateX = this.defaultTilt;
@@ -29,16 +31,26 @@ define(["fiber", "jquery", "fieldFactory"], function(fiber, $, FieldFactory){
                 this.transform();
             },
             
+            addPlayer: function(options){
+                this.players[options.id] = new Player(options);
+            },
+            
+            getPlayer: function(id){
+                return this.players[id];
+            },
+            
             processData: function(data){
                 
-                var currentField;
+                var currentField,
+                    id;
                 
                 for( var key in data.fields ){
                     
                     currentField = data.fields[ key ];
+                    id = parseInt(key, 10) + 1;
                     
-                    var x = this.fields[ parseInt(key, 10) + 1 ] = FieldFactory.create(currentField);
-                    
+                    this.fields[ id ] = FieldFactory.create(currentField);
+                    this.fields[ id ] && ( this.fields[ id ].id = id );
                 }
                 
             },
@@ -51,6 +63,24 @@ define(["fiber", "jquery", "fieldFactory"], function(fiber, $, FieldFactory){
                     width: size,
                     height: size
                 })
+            },
+            
+            movePlayer: function(playerId, steps){
+                
+                var player = this.getPlayer(playerId),
+                    currentField = this.getField(player.position),
+                    destinationField;
+                
+                player.position += steps;
+                
+                if( player.position > this.maxField ){
+                    player.position = player.position - this.maxField;
+                }
+                
+                destinationField = this.getField(player.position);
+                
+                currentField && currentField.removePlayer(player);
+                destinationField && destinationField.addPlayer(player);
             },
             
             getField: function(num){

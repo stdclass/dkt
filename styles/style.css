@@ -20,6 +20,22 @@ body{
     transform-origin: 0% 0%;
 }
 
+#board .tile > .player-container{
+    position: absolute;
+    left: 2%;
+    right: 0;
+    top: 105%;
+}
+
+#board .tile .player{
+    width: 10px;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
 #board > .tile-container-top{
     left: 0;
     right: 0;
@@ -43,6 +59,7 @@ body{
 }
 
 #board > .tile-container >.tile{
+    position: relative;
     float: left;
     border-left: 1px solid #000;
     border-right: 1px solid #000;
@@ -58,7 +75,7 @@ body{
     position: absolute;
     top: 3%;
     right: 3%;
-    content: attr(data-tile);
+    content: attr(data-field);
 }
 
 #board > .tile-container > .tile-corner{
@@ -179,4 +196,18 @@ body{
 #board > .tile-container > .tile-blue > .title{
     background: #00A0B0;
     color: #fff;
+}
+
+
+#board .tile .player-yellow{
+    background: #EDC951;
+}
+#board .tile .player-blue{
+    background: #00A0B0;
+}
+#board .tile .player-red{
+    background: #CC333F;
+}
+#board .tile .player-green{
+    background: #B5D672;
 }

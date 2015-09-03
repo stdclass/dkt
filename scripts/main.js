@@ -39,5 +39,11 @@ require(
         Board.resize();
     });
     
+    Board.addPlayer({
+        id: 1,
+        name: "Phillip",
+        color: "blue"
+    })
+    
     window.b = Board;
 });
