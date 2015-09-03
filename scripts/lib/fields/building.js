@@ -1,13 +1,16 @@
-define(["fiber"], function(fiber){
+define(["fiber", "field"], function(fiber, field){
     
     var fiber = require("fiber");
     
-    var Building = fiber.extend(function(){
+    var Building = field.extend(function(){
         return {
             color: null,
-            
+            name: "",
+            city: null,
             init: function(options){
-                this.color = options.color
+                this.color = options.color;
+                this.name = options.name;
+                this.city = options.city;
             },
             
             render: function(){

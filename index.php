@@ -182,7 +182,7 @@
                 </div>
                 <div class="tile tile-building tile-rosa" data-tile="10">
                     <div class="title">
-                        Jos. Haydn--<br />
+                        Jos. Haydn-<br />
                         Gasse
                     </div>
                 </div>

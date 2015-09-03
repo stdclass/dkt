@@ -24,9 +24,6 @@ require(
     Board.render();
     
     $(window).keyup(function(ev){
-        // 37 left, 39 right
-        console.log(ev.keyCode);
-        
         switch(ev.keyCode){
             case 37: Board.turnRight(); break;
             case 38: Board.disable3d(); break;
@@ -40,5 +37,7 @@ require(
     
     $(window).resize(function(){
         Board.resize();
-    })
+    });
+    
+    window.b = Board;
 });

@@ -1,11 +1,9 @@
-define(["fiber", "jquery"], function(fiber){
+define(["fiber", "jquery", "fieldFactory"], function(fiber, $, FieldFactory){
     
     var fiber = require("fiber");
     
-    
     var Board = fiber.extend(function(){
         return {
-            data: {},
             transformation: {
                 rotateZ: 0,
                 rotateX: 0,
@@ -13,14 +11,15 @@ define(["fiber", "jquery"], function(fiber){
             },
             defaultTilt: 48,
             $board: null,
-            
-            
+            fields: {},            
             init: function(){
                 
                 this.transformation.rotateX = this.defaultTilt;
                 
                 $.ajax("/dkt/scripts/data/board.json").always($.proxy(function(data){
-                    this.data = data;
+                    
+                    this.processData(data);
+                    
                 }, this));
                 
                 this.$board = $("#board");
@@ -28,6 +27,20 @@ define(["fiber", "jquery"], function(fiber){
                 this.adaptSize();
                 
                 this.transform();
+            },
+            
+            processData: function(data){
+                
+                var currentField;
+                
+                for( var key in data.fields ){
+                    
+                    currentField = data.fields[ key ];
+                    
+                    var x = this.fields[ parseInt(key, 10) + 1 ] = FieldFactory.create(currentField);
+                    
+                }
+                
             },
             
             adaptSize: function(){
@@ -38,6 +51,10 @@ define(["fiber", "jquery"], function(fiber){
                     width: size,
                     height: size
                 })
+            },
+            
+            getField: function(num){
+                return this.fields[num];
             },
             
             turnLeft: function(){
