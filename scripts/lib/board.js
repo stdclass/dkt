@@ -1,4 +1,4 @@
-define(["fiber", "jquery", "fieldFactory", "player"], function(fiber, $, FieldFactory, Player){
+define(["fiber", "jquery", "fieldFactory", "player", "game"], function(fiber, $, FieldFactory, Player, Game){
     
     var fiber = require("fiber");
     
@@ -12,8 +12,11 @@ define(["fiber", "jquery", "fieldFactory", "player"], function(fiber, $, FieldFa
             defaultTilt: 48,
             maxField: 40,
             $board: null,
+            $logContainer: null,
             fields: {},
-            players: {},
+            onReady: $.noop,
+            game: null,
+            
             init: function(){
                 
                 this.transformation.rotateX = this.defaultTilt;
@@ -22,22 +25,53 @@ define(["fiber", "jquery", "fieldFactory", "player"], function(fiber, $, FieldFa
                     
                     this.processData(data);
                     
+                    this.onReady();
+                    
                 }, this));
                 
                 this.$board = $("#board");
+                this.$logContainer = $("#log-container");
                 
                 this.adaptSize();
                 
                 this.transform();
+                
+                this.game = new Game({
+                    board: this
+                })
             },
             
-            addPlayer: function(options){
-                this.players[options.id] = new Player(options);
+            addPlayer: function(player){
+                return this.game.addPlayer(player);
             },
             
-            getPlayer: function(id){
-                return this.players[id];
+            setBeginningPlayer: function(player){
+                this.game.setActivePlayer(player);
             },
+            
+            rollDice: function(){
+                
+                this.playSound("roll-dice");
+                
+                setTimeout($.proxy(function(){
+
+                    this.game.rollDice();
+                    
+                }, this), 1500);
+            },
+            
+            playSound: function(sound){
+                $("#sound-" + sound).get(0).play();
+            },
+
+            ready: function(callback){
+                this.onReady = callback;
+            },
+            
+            logEvent: function(message){
+                this.$logContainer.prepend('<div class="log">' + message + '</div>');
+            },
+            
             
             processData: function(data){
                 
@@ -57,30 +91,13 @@ define(["fiber", "jquery", "fieldFactory", "player"], function(fiber, $, FieldFa
             
             adaptSize: function(){
                 
-                var size = $(window).height() - 50;
+                var size = $(window).height() - 80;
                 
                 this.$board.css({
                     width: size,
                     height: size
-                })
-            },
-            
-            movePlayer: function(playerId, steps){
+                });
                 
-                var player = this.getPlayer(playerId),
-                    currentField = this.getField(player.position),
-                    destinationField;
-                
-                player.position += steps;
-                
-                if( player.position > this.maxField ){
-                    player.position = player.position - this.maxField;
-                }
-                
-                destinationField = this.getField(player.position);
-                
-                currentField && currentField.removePlayer(player);
-                destinationField && destinationField.addPlayer(player);
             },
             
             getField: function(num){

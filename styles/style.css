@@ -1,15 +1,27 @@
 body{
     overflow: hidden;
+    
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#306fd3+0,44497f+100 */
+    background: #306fd3; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  #306fd3 0%, #44497f 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#306fd3), color-stop(100%,#44497f)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  #306fd3 0%,#44497f 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  #306fd3 0%,#44497f 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  #306fd3 0%,#44497f 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  #306fd3 0%,#44497f 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#306fd3', endColorstr='#44497f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    
 }
 
 #board{
     margin: 0 auto;
-    border: 3px solid #000;
+    border: 2px solid #000;
     font-size: 6px;
     text-transform: uppercase;
     font-weight: bold;
-    background: rgba(0,0,0,.1);
+    background: #fff;
     transition: all 1s ease-in-out;
+    box-shadow: 0 0 150px 0 rgba(0,0,0,.5);
 }
 
 
@@ -33,6 +45,8 @@ body{
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    border: 1px solid #000;
+    margin-right: 5px;
 }
 
 
@@ -105,7 +119,7 @@ body{
 }
 
 #board > .tile-container > .tile-start{
-    background: red;
+    background: #CC333F;
 }
 
 #board > .tile-container > .tile-risk > .title,
@@ -114,7 +128,7 @@ body{
     position: absolute;
     left: 0;
     right: 0;
-    top: 25%;
+    top: 10%;
     text-align: center;
     padding: 5px;
 }
@@ -124,8 +138,8 @@ body{
     position: absolute;
     left: 0;
     right: 0;
-    top: 48%;
-    font-size: 30px;
+    top: 35%;
+    font-size: 15px;
     text-align: center;
     color: #fff;
 }
@@ -199,15 +213,212 @@ body{
 }
 
 
-#board .tile .player-yellow{
+#board .tile .player-yellow,
+.dot-yellow{
     background: #EDC951;
 }
-#board .tile .player-blue{
+#board .tile .player-blue,
+.dot-blue{
     background: #00A0B0;
 }
-#board .tile .player-red{
+#board .tile .player-red,
+.dot-red{
     background: #CC333F;
 }
-#board .tile .player-green{
+#board .tile .player-green,
+.dot-green{
     background: #B5D672;
 }
+
+
+.dot{
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+
+#sidebar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 280px;
+    background: rgba(0,0,0,.8);
+    color: #fff;
+    opacity: 0.6;
+    transition: all 0.25s ease-in-out;
+}
+
+#sidebar:hover{
+    width: 350px;
+    opacity: 1;
+}
+
+#sidebar .reveal{
+    opacity: 0;
+    transition: all 0.25s ease-in-out;
+}
+
+#sidebar:hover .reveal{
+    opacity: 1;
+}
+
+.slide{
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 450px;
+    bottom: 0;
+    opacity: 0;
+    padding: 15px;
+    transition: all 0.25s ease-in-out;
+}
+
+.slide.active{
+    left: 0;
+    opacity: 1;
+}
+
+.slide a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.slide a.btn{
+    border-radius: 0;
+    border: 0;
+}
+
+.slide a.btn-primary{
+    background: #CC333F;
+    color: #fff;
+}
+
+
+.slide .info-title{
+}
+
+.slide .info-title h2{
+    margin-top: 10px;
+}
+
+.slide .info-container .large-action{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    height: 115px;
+    text-align: center;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding-top: 50px;
+    background-color: #00A0B0;
+    font-size: 15px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.slide .info-title .pull-right p{
+    padding: 15px 0;
+}
+
+.slide .info-title .pull-right .btn{
+    margin: 10px 0;
+}
+
+.slide .info-box{
+    text-align: right;
+    position: relative;
+}
+
+.slide .info-box .title{
+    font-weight: 100;
+    font-size: 30px;
+}
+
+.slide .info-box .sub-title{
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.slide .info-container > .seperator{
+    height: 1px;
+    background: rgba(255,255,255,.3);
+    margin: 40px 0 30px;
+}
+.slide .info-box .seperator{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(255,255,255,.3);
+}
+
+
+#log-container{
+    overflow-y: scroll;
+    max-height: 500px;
+    padding-bottom: 130px;
+}
+
+#log-container .log{
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255,255,255,0);
+    padding: 8px 5px 5px;
+}
+
+#log-container .log:nth-child(2n+1){
+    background: rgba(255,255,255,.1);
+}
+
+
+#log-container .log:nth-child(2){
+    opacity: 0.9;
+}
+#log-container .log:nth-child(3){
+    opacity: 0.8;
+}
+#log-container .log:nth-child(4){
+    opacity: 0.7;
+}
+#log-container .log:nth-child(5){
+    opacity: 0.6;
+}
+#log-container .log:nth-child(6){
+    opacity: 0.55;
+}
+#log-container .log:nth-child(7){
+    opacity: 0.5;
+}
+#log-container .log:nth-child(8){
+    opacity: 0.45;
+}
+#log-container .log:nth-child(9){
+    opacity: 0.4;
+}
+#log-container .log:nth-child(10){
+    opacity: 0.3;
+}
+#log-container .log:nth-child(11){
+    opacity: 0.3;
+}
+#log-container .log:nth-child(12){
+    opacity: 0.3;
+}
+#log-container .log:nth-child(13){
+    opacity: 0.3;
+}
+#log-container .log:nth-child(14){
+    opacity: 0.3;
+}
+#log-container .log:nth-child(15){
+    opacity: 0.3;
+}
+

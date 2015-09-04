@@ -155,10 +155,6 @@
                         Start
                     </div>
                     <div class="player-container">
-                        <div id="player-1" class="player player-yellow">1</div>
-                        <div id="player-2" class="player player-blue">2</div>
-                        <div id="player-3" class="player player-green">3</div>
-                        <div id="player-4" class="player player-red">4</div>
                     </div>
                 </div>
                 <div class="tile tile-building tile-blue" data-field="2">
@@ -201,11 +197,12 @@
                     </div>
                     <div class="player-container"></div>
                 </div>
-                <div class="tile tile-building tile-transport" data-field="8">
+                <div class="tile tile-transport" data-field="8">
                     <div class="title">
                         <div>Eisenbahn</div>
                         Wien - Graz
                     </div>
+                    <div class="player-container"></div>
                 </div>
                 <div class="tile tile-bank" data-field="9">
                     <div class="title">
@@ -295,5 +292,122 @@
             
         </div>
         
+        <div id="sidebar">
+            <div class="slide active" data-slide-id="main">
+                <div class="info-container">
+                    <div class="info-title">
+                        <h2 class="pull-left">Profil </h2>
+                        <div class="pull-right">
+                            <div class="reveal">
+                                <p>PHILLIP</p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <a href="javascript:;" data-slide="money" class="col-xs-4 info-box">
+                            <div class="title" id="player-info-money">
+                                650,-
+                            </div>
+                            <div class="sub-title">
+                                cash
+                            </div>
+                            <div class="seperator"></div>
+                        </a>
+                        <div class="col-xs-4 info-box">
+                            <div class="title" id="player-info-properties">
+                                2
+                            </div>
+                            <div class="sub-title">
+                                eigent&uuml;mer
+                            </div>
+                            <div class="seperator"></div>
+                        </div>
+                        <div class="col-xs-4 info-box">
+                            <div class="title" id="player-info-position">
+                                1
+                            </div>
+                            <div class="sub-title">
+                                position
+                            </div>
+                        </div>
+                    </div>
+                    <div class="seperator"></div>
+                    <div class="info-title">
+                        <h2>Spieler</h2>
+                    </div>
+                    <div class="row">
+                        <a href="javascript:;" data-slide="money" class="col-xs-3 info-box player-info-small" data-player="1">
+                            <div class="title" id="player-info-money">
+                                <div class="dot dot-red"></div>
+                            </div>
+                            <div class="sub-title">
+                                <div class="reveal">Phillip</div>
+                            </div>
+                            <div class="seperator"></div>
+                        </a>
+                        <div class="col-xs-3 info-box player-info-small">
+                            <div class="title" id="player-info-properties">
+                                <div class="dot dot-yellow"></div>
+                            </div>
+                            <div class="sub-title">
+                                <div class="reveal">Alex</div>
+                            </div>
+                            <div class="seperator"></div>
+                        </div>
+                        <div class="col-xs-3 info-box player-info-small">
+                            <div class="title" id="player-info-position">
+                                <div class="dot dot-blue"></div>
+                            </div>
+                            <div class="sub-title">
+                                <div class="reveal">Thomas</div>
+                            </div>
+                            <div class="seperator"></div>
+                        </div>
+                        <div class="col-xs-3 info-box player-info-small">
+                            <div class="title" id="player-info-position">
+                                <div class="dot dot-green"></div>
+                            </div>
+                            <div class="sub-title">
+                                <div class="reveal">Laurin</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="seperator"></div>
+                    <div class="info-title">
+                        <h2>Geschichte</h2>
+                    </div>
+                    
+                    <div id="log-container">
+                    </div>
+                    
+                    <div class="large-action" id="roll-dice">
+                        W&uuml;rfeln
+                    </div>
+                </div>
+            </div>
+            <div class="slide" data-slide-id="money">
+                <div class="info-title">
+                    <h2 class="pull-left">Geld</h2>
+                    <div class="pull-right">
+                        <div class="reveal">
+                            <a href="javascript:;" class="btn btn-primary" data-slide="_back">Zur&uuml;ck</a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- play some jazz -->
+        <div style="display: none;"><xiframe src="https://www.youtube.com/embed/Kg4WgZNb_uc?autoplay=1" frameborder="0" allowfullscreen></xiframe></div>
+        
+        <audio style="visibility: hidden" id="sound-roll-dice">
+            <source src="sounds/roll-dice.mp3" type="audio/mpeg">
+        </audio>
     </body>
 </html>

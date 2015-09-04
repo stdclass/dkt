@@ -1,4 +1,15 @@
-define(["fiber", "fields/building"], function(fiber, FieldBuilding){
+define(
+[
+    "fiber", 
+    "field", 
+    "fields/building",
+    "fields/transport"
+], function(
+        fiber,
+        Field,
+        FieldBuilding, 
+        FieldTransport
+){
     
     var fiber = require("fiber");
     
@@ -8,6 +19,8 @@ define(["fiber", "fields/building"], function(fiber, FieldBuilding){
                 
                 switch(field.type){
                     case 'building': return new FieldBuilding(field);
+                    case 'transport': return new FieldTransport(field);
+                    default: return new Field(field);
                 }
             },
         }

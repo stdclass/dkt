@@ -8,12 +8,14 @@ define(["fiber"], function(fiber){
             name: "",
             color: "",
             position: 0,
+            money: 0,
             
             init: function(options){
                 this.id = options.id;
                 this.name = options.name;
                 this.color = options.color;
                 this.position = options.position || 1;
+                this.money = options.money || 1;
             },
             asHTML: function(){
                 return '<div id="player-' + this.id + '" class="player player-' + this.color + '">' + this.id + '</div>'

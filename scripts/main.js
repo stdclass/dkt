@@ -21,8 +21,38 @@ require(
     
     var Board = new Board;
     
-    Board.render();
+    // when board data is loaded
+    Board.ready(function(){
+        
+        var phill = Board.addPlayer({
+            name: "Phillip",
+            color: "blue", 
+            money: 650
+        });
+        
+        Board.addPlayer({
+            name: "Alex",
+            color: "green",
+            money: 650
+        });
+        
+        Board.addPlayer({
+            name: "Thomas",
+            color: "red",
+            money: 650
+        });
+        
+        Board.addPlayer({
+            name: "Laurin",
+            color: "yellow",
+            money: 650
+        });
+        
+        Board.setBeginningPlayer(phill);
+        
+    });
     
+
     $(window).keyup(function(ev){
         switch(ev.keyCode){
             case 37: Board.turnRight(); break;
@@ -34,16 +64,39 @@ require(
             case 189: Board.zoomOut(); break;
         }
     });
-    
+
     $(window).resize(function(){
         Board.resize();
     });
     
-    Board.addPlayer({
-        id: 1,
-        name: "Phillip",
-        color: "blue"
-    })
+    
+    $("#roll-dice").click(function(){
+        Board.rollDice();
+    });
+    
+    
+    // dirty slide navigation
+    
+    var slideStack = ["main"];
+    
+    $("[data-slide]").click(function(){
+        var slide = $(this).data("slide");
+        
+        if( slide == "_back" ){
+            slideStack.pop();
+            slide = slideStack[slideStack.length - 1];
+        }else{
+            slideStack.push(slide);
+        }
+        
+        console.log(slide, $(this));
+        
+        $("#sidebar .slide.active").removeClass("active");
+        $("[data-slide-id=" + slide + "]").addClass("active");
+        
+        
+    });
     
     window.b = Board;
+    
 });
