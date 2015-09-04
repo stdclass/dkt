@@ -91,7 +91,7 @@ define(["fiber", "jquery", "fieldFactory", "player", "game"], function(fiber, $,
             
             adaptSize: function(){
                 
-                var size = $(window).height() - 80;
+                var size = $(window).height() - 160;
                 
                 this.$board.css({
                     width: size,

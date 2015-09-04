@@ -14,14 +14,18 @@ body{
 }
 
 #board{
-    margin: 0 auto;
+    margin: 80px auto 0;
     border: 2px solid #000;
     font-size: 6px;
     text-transform: uppercase;
     font-weight: bold;
     background: #fff;
-    transition: all 1s ease-in-out;
+    transition: all 0.6s ease-in-out;
     box-shadow: 0 0 150px 0 rgba(0,0,0,.5);
+}
+
+#board-container{
+    margin-right: 280px;
 }
 
 
@@ -36,17 +40,19 @@ body{
     position: absolute;
     left: 2%;
     right: 0;
-    top: 105%;
+    top: 60%;
 }
 
 #board .tile .player{
-    width: 10px;
+    width: 15px;
     display: inline-block;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 3px 0;
     border: 1px solid #000;
     margin-right: 5px;
+    border-radius: 100%;
+    box-shadow: 2px 2px 0 0 rgba(0,0,0,.5);
 }
 
 
@@ -78,7 +84,7 @@ body{
     border-left: 1px solid #000;
     border-right: 1px solid #000;
     border-top: 2px solid #000;
-    width: 9.09%;
+    width: 9.5%;
     height: 100%;
 }
 
@@ -93,7 +99,7 @@ body{
 }
 
 #board > .tile-container > .tile-corner{
-    width: 18.18%;
+    width: 14.5%;
 }
 
 
@@ -245,7 +251,7 @@ body{
     right: 0;
     top: 0;
     bottom: 0;
-    width: 280px;
+    width: 300px;
     background: rgba(0,0,0,.8);
     color: #fff;
     opacity: 0.6;
@@ -303,6 +309,7 @@ body{
 
 .slide .info-title h2{
     margin-top: 10px;
+    font-size: 20px;
 }
 
 .slide .info-container .large-action{

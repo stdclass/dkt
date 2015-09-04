@@ -84,7 +84,7 @@ define(["fiber", "player"], function(fiber, Player){
                 this.movePlayer(player, diceOne + diceTwo);
                 
                 if( diceOne == diceTwo ){
-                    this.board.logEvent(player.name + "w&uuml;rfelt pascher mit " + diceOne );
+                    this.board.logEvent(player.name + " w&uuml;rfelt Pascher mit 2 &times; " + diceOne );
                     
                     this.rollDice();
                     
