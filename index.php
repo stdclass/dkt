@@ -376,16 +376,44 @@
                             </div>
                         </div>
 
-                    
-
-                        <div class="seperator"></div>
-                        <div class="info-title">
-                            <h2>Geschichte</h2>
+                        <div id="move-options-building">
+                            <div class="seperator"></div>
+                            
+                            <div class="info-title">
+                                <h2 id="move-field-name"></h2>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <a href="javascript:;" data-slide="money" class="col-xs-4 info-box">
+                                    <div class="title" id="field-info-price">
+                                        
+                                    </div>
+                                    <div class="sub-title">
+                                        preis
+                                    </div>
+                                    <div class="seperator"></div>
+                                </a>
+                                <div class="col-xs-4 info-box">
+                                    <div class="title" id="field-info-price-per-house">
+                                        2
+                                    </div>
+                                    <div class="sub-title">
+                                        p.p. haus
+                                    </div>
+                                    <div class="seperator"></div>
+                                </div>
+                                <div class="col-xs-4 info-box">
+                                    <div class="title" id="player-info-position">
+                                        1
+                                    </div>
+                                    <div class="sub-title">
+                                        p.p. hotel
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <a class="btn btn-primary" id="move-options-building-buy" href="javascript:;">KAUFEN</a>
                         </div>
-                    
-                        <div id="log-container">
-                        </div>
-                    
                         <div class="large-action" id="roll-dice">
                             W&uuml;rfeln
                         </div>
@@ -403,6 +431,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+        
+    
+        <div id="log-container">
         </div>
         
         <!-- play some jazz -->

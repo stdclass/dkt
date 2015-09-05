@@ -49,6 +49,7 @@ require(
         });
         
         Board.setBeginningPlayer(phill);
+        Board.setPlayingPlayer(phill);
         
     });
     

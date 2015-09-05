@@ -49,6 +49,10 @@ define(["fiber", "jquery", "fieldFactory", "player", "game"], function(fiber, $,
                 this.game.setActivePlayer(player);
             },
             
+            setPlayingPlayer: function(player){
+                this.game.setPlayingPlayer(player);
+            },
+            
             rollDice: function(){
                 
                 this.playSound("roll-dice");

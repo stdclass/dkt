@@ -1,4 +1,4 @@
-define(["fiber", "player"], function(fiber, Player){
+define(["fiber", "player", "UI"], function(fiber, Player, UI){
     
     var fiber = require("fiber");
     
@@ -8,9 +8,14 @@ define(["fiber", "player"], function(fiber, Player){
             activePlayerId: 0,
             players: [],
             board: null,
+            playingPlayer: null,
+            menues: {
+                $nextMove: null
+            },
             
             init: function(options){
                 this.board = options.board;
+                this.menues.$nextMove = $("#menu-next-move");
             },
             
             
@@ -60,8 +65,11 @@ define(["fiber", "player"], function(fiber, Player){
             },
             
             setActivePlayer: function(player){
-                console.log(player);
                 this.activePlayerId = player.id;
+            },
+            
+            setPlayingPlayer: function(player){
+                this.playingPlayer = player;
             },
             
             setNextActivePlayer: function(){
@@ -79,9 +87,12 @@ define(["fiber", "player"], function(fiber, Player){
             rollDice: function(){
                 var player = this.getActivePlayer(),
                     diceOne = Math.ceil(Math.random() * 10) % 6 + 1,
-                    diceTwo = Math.ceil(Math.random() * 10) % 6 + 1;
+                    diceTwo = Math.ceil(Math.random() * 10) % 6 + 1,
+                    field;
                 
                 this.movePlayer(player, diceOne + diceTwo);
+                
+                field = this.board.getField(player.position);
                 
                 if( diceOne == diceTwo ){
                     this.board.logEvent(player.name + " w&uuml;rfelt Pascher mit 2 &times; " + diceOne );
@@ -92,6 +103,13 @@ define(["fiber", "player"], function(fiber, Player){
                 }
                 
                 this.board.logEvent(player.name + " w&uuml;rfelt <b>" + diceOne + "</b> und <b>" + diceTwo + "</b>");
+                
+                if( player.id == this.playingPlayer.id ){
+                    
+                    if( typeof field.playerLanded !== "undefined" )
+                        field.playerLanded(player);
+                    
+                }
                 
                 this.setNextActivePlayer();
                 

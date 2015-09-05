@@ -328,6 +328,11 @@ body{
     cursor: pointer;
 }
 
+#menu-next-move{
+    cursor: default;
+    background: transparent;
+}
+
 .slide .info-title .pull-right p{
     padding: 15px 0;
 }
@@ -352,7 +357,8 @@ body{
     text-transform: uppercase;
 }
 
-.slide .info-container > .seperator{
+.slide .info-container > .seperator,
+#move-options-building .seperator{
     height: 1px;
     background: rgba(255,255,255,.3);
     margin: 40px 0 30px;
@@ -368,9 +374,12 @@ body{
 
 
 #log-container{
-    overflow-y: scroll;
     max-height: 500px;
-    padding-bottom: 130px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 350px;
+    color: #fff;
 }
 
 #log-container .log{
@@ -429,3 +438,6 @@ body{
     opacity: 0.3;
 }
 
+#move-options-building{
+    display: none;
+}
